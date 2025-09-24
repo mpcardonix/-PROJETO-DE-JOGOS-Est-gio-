@@ -16,9 +16,9 @@ var c = 0
 func updateText(label : Label ,newValue : String):
 	label.text = newValue
 
-func updateSprite(sprite : TextureRect, new : Texture):
-	if new != null and new != sprite.texture:
-		sprite.texture = new
+func updateSprite(sp : TextureRect, new : Texture):
+	if new != null and new != sp.texture:
+		sp.texture = new
 
 func question_handler(i : int):
 	#0 = Down
@@ -48,7 +48,7 @@ func start(new_dialogue : Dialogue):
 		Ui.fade_in(self)
 		anchor(current_loaded_dialogue.messages[c].sprite_pos)
 		updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
-		updateSprite(sprite, current_loaded_dialogue.messages[c].sprite)
+		updateSprite(border, current_loaded_dialogue.messages[c].border)
 		updateText(dialogue_text, new_dialogue.messages[c].text)
 
 func loadNextMessage():
